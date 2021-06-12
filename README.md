@@ -1,5 +1,5 @@
 # SRC++
-A quality-of-life extension for [speedrun.com].
+A quality-of-life extension for [speedrun.com](speedrun.com).
 
 ## Features
 * [Disable Custom Trophies](#disable-custom-trophies)
