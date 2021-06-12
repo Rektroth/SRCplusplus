@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "SRC++",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://speedrun.com/*",
+        "https://speedrun.com/*",
+        "http://www.speedrun.com/*",
+        "https://www.speedrun.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
