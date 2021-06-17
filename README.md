@@ -6,7 +6,10 @@ A quality-of-life extension for [speedrun.com](speedrun.com).
 * [No User Badges and Gradients](#no-user-badges-and-gradients)
 
 ### Disable Custom Trophies
-SRC allows runners to disable custom game themes, but still always shows custom trophies. SRC++ allows runners to disable seeing custom trophies.
+In addition to disabling custom leaderboard themes, disable custom trophies and instead see the site-wide defaults.
 
 ### No User Badges and Gradients
-SRC++ allows you to disable seeing user badges and/or username gradients. It also allows you to specify that you wish to only see badges when a user is an original donor.
+Username gradients and badges can be annoying; so get rid of them. Or optionally, get rid of badges just for those who aren't original donors.
+
+### Consolidate Categories
+Have miscellaneous categories displays alongside the main categories instead of hidden behind an arbitrary "misc" dropdown.
