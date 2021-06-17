@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "SRC++",
+  "version": "0.2",
+  "action": {
+    "default_icon": {
+      "8": "assets/icon8.png",
+      "16": "assets/icon16.png",
+      "24": "assets/icon24.png",
+      "32": "assets/icon32.png",
+      "48": "assets/icon48.png",
+      "64": "assets/icon64.png",
+      "80": "assets/icon80.png",
+      "96": "assets/icon96.png"
+    },
+    "default_title": "SRC++",
+    "default_popup": "settings/settings.html"
+  },
+  "description": "A quality of life extension for speedrun.com.",
+  "icons": {
+    "8": "assets/icon8.png",
+    "16": "assets/icon16.png",
+    "24": "assets/icon24.png",
+    "32": "assets/icon32.png",
+    "48": "assets/icon48.png",
+    "64": "assets/icon64.png",
+    "80": "assets/icon80.png",
+    "96": "assets/icon96.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.speedrun.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ]
+}
