@@ -4,7 +4,9 @@
         <link rel="stylesheet" href="settings.css" />
     </head>
     <body>
+        <h1>Settings</h1>
         <form id="settings-form">
+            <h2>Usernames</h2>
             <div class="form-group row">
                 <div class="col-sm-5 text-sm-right col-label">
                     <label for="disable-gradients">Disable username gradients</label>
@@ -38,6 +40,7 @@
                     </label>
                 </div>
             </div>
+            <h2>Trophies</h2>
             <div class="form-group row">
                 <div class="col-sm-5 text-sm-right col-label">
                     <label for="disable-custom-trophies">Disable custom trophies</label>
@@ -45,6 +48,18 @@
                 <div class="col-sm-5">
                     <label class="switch">
                         <input type="checkbox" name="disable-custom-trophies" id="disable-custom-trophies" />
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+            <h2>Leaderboards</h2>
+            <div class="form-group row">
+                <div class="col-sm-5 text-sm-right col-label">
+                    <label for="consolidate-misc">Consolidate Miscellaneous Categories</label>
+                </div>
+                <div class="col-sm-5">
+                    <label class="switch">
+                        <input type="checkbox" name="consolidate-misc" id="consolidate-misc" />
                         <span class="slider"></span>
                     </label>
                 </div>

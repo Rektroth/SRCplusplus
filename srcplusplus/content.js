@@ -6,12 +6,11 @@ window.onload = async function() {
             settings = data.settings;
             handleAll();
         } else {
-            document.querySelector("[id=error]").innerText = `error:
+            document.querySelector("#error").innerText = `error:
             ${chrome.runtime.error}`;
         }
     });
 
-    // leaderboard changes
     const leaderboardObserver = new MutationObserver(onLeaderboardMutation);
     const leaderboard = document.querySelector("div#leaderboarddiv");
     const frontPageObserver = new MutationObserver(onLeaderboardMutation);
@@ -72,7 +71,7 @@ window.onload = async function() {
 
         // trophies
         if (settings.disableCustomTrophies) {
-            var trophies = document.querySelectorAll("img.trophy");
+            let trophies = document.querySelectorAll("img.trophy");
     
             if (trophies.length > 0) {
                 for (let trophy of trophies) {
@@ -90,6 +89,30 @@ window.onload = async function() {
                             trophy.parentElement.removeChild(trophy);
                             break;
                     }
+                }
+            }
+        }
+
+        // leaderboards
+        if (settings.consolidateMisc) {
+            let miscDropdown = document.querySelector("#miscellaneous");
+
+            if (miscDropdown) {
+                miscDropdown = miscDropdown.parentElement;
+                let miscCategories = miscDropdown.querySelector(".dropdown-menu-misc");
+                let fragment = document.createDocumentFragment();
+
+                while (miscCategories.firstChild) {
+                    fragment.appendChild(miscCategories.firstChild);
+                }
+
+                miscDropdown.parentElement.replaceChild(fragment, miscDropdown);
+                miscCategories = document.querySelectorAll("#leaderboardform .dropdown-item.category");
+
+                for (let miscCategory of miscCategories) {
+                    miscCategory.classList.remove("dropdown-item");
+                    miscCategory.classList.add("nav-item");
+                    miscCategory.classList.add("nav-link");
                 }
             }
         }

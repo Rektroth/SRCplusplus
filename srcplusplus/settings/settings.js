@@ -10,6 +10,7 @@ window.onload = async function() {
                 form["disable-nondonor-icons"].checked = Boolean(settings.disableNondonorIcons);
                 form["disable-user-icons"].checked = Boolean(settings.disableUserIcons);
                 form["disable-custom-trophies"].checked = Boolean(settings.disableCustomTrophies);
+                form["consolidate-misc"].checked = Boolean(settings.consolidateMisc);
             }
         } else {
             document.querySelector("[id=error]").innerText = `error:
@@ -34,6 +35,11 @@ window.onload = async function() {
 
     form["disable-custom-trophies"].addEventListener("change", function() {
         settings.disableCustomTrophies = form["disable-custom-trophies"].checked;
+        chrome.storage.sync.set({ settings: settings }, errorCheck(chrome.runtime.error));
+    });
+
+    form["consolidate-misc"].addEventListener("change", function() {
+        settings.consolidateMisc = form["consolidate-misc"].checked;
         chrome.storage.sync.set({ settings: settings }, errorCheck(chrome.runtime.error));
     });
 
