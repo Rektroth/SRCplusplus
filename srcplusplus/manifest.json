@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SRC++",
-  "version": "0.2",
+  "version": "0.3",
   "action": {
     "default_icon": {
       "8": "assets/icon8.png",
@@ -39,5 +39,8 @@
   ],
   "permissions": [
     "storage"
+  ],
+  "host_permissions": [
+    "*://*.speedrun.com/*"
   ]
 }

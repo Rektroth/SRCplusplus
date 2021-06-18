@@ -12,4 +12,4 @@ In addition to disabling custom leaderboard themes, disable custom trophies and 
 Username gradients and badges can be annoying; so get rid of them. Or optionally, get rid of badges just for those who aren't original donors.
 
 ### Consolidate Categories
-Have miscellaneous categories displays alongside the main categories instead of hidden behind an arbitrary "misc" dropdown.
+Have miscellaneous categories displayed alongside the main categories instead of hidden behind an arbitrary "misc" dropdown. Or take it a step further, and have category extensions displayed on the main leaderboard.

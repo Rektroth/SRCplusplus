@@ -11,6 +11,7 @@ window.onload = async function() {
                 form["disable-user-icons"].checked = Boolean(settings.disableUserIcons);
                 form["disable-custom-trophies"].checked = Boolean(settings.disableCustomTrophies);
                 form["consolidate-misc"].checked = Boolean(settings.consolidateMisc);
+                form["consolidate-extensions"].checked = Boolean(settings.consolidateExtensions);
             }
         } else {
             document.querySelector("[id=error]").innerText = `error:
@@ -40,6 +41,11 @@ window.onload = async function() {
 
     form["consolidate-misc"].addEventListener("change", function() {
         settings.consolidateMisc = form["consolidate-misc"].checked;
+        chrome.storage.sync.set({ settings: settings }, errorCheck(chrome.runtime.error));
+    });
+
+    form["consolidate-extensions"].addEventListener("change", function() {
+        settings.consolidateExtensions = form["consolidate-extensions"].checked;
         chrome.storage.sync.set({ settings: settings }, errorCheck(chrome.runtime.error));
     });
 

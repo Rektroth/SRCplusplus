@@ -116,6 +116,23 @@ window.onload = async function() {
                 }
             }
         }
+        
+        if (settings.consolidateExtensions) {
+            let headings = document.evaluate("//a[contains(., 'Category Extensions')]", document, null, XPathResult.ANY_TYPE, null);
+            let cePath = headings.iterateNext().getAttribute("href").split("/");
+            let ceCode = cePath[cePath.length - 1];
+
+            fetch(`https://www.speedrun.com/api/v1/games/${ceCode}/categories`).then(function(response) {
+                return response.json();
+            }).then(function(data) {
+                /*let miscDropdown = document.querySelector(".nav.nav-tabs");
+
+                for (category of data.data) {
+                    let link = document.createElement("a");
+                    link.id = ""
+                }*/
+            })
+        }
     }
     
     function removeGradient(username) {
