@@ -53,18 +53,14 @@ window.onload = async function() {
         }
         
         // user icons
-        if (settings.disableUserIcons) {
+        if (settings.disableUserIcons || settings.disableNondonorIcons) {
             let userIcons = document.querySelectorAll("img.usericon");
-        
+
             for (let userIcon of userIcons) {
-                userIcon.parentElement.removeChild(userIcon);
-            }
-        } else if (settings.disableNondonorIcons) {
-            let userIcons = document.querySelectorAll("img.usericon");
-        
-            for (let userIcon of userIcons) {
-                if (!userIcon.hasAttribute("data-original-title")
-                || userIcon.getAttribute("data-original-title") !== "Original Donor") {
+                if (userIcon.getAttribute("data-original-title") !== "Super Mod" &&
+                    userIcon.getAttribute("data-original-title") !== "Mod" &&
+                    userIcon.getAttribute("data-original-title") !== "Verifier" &&
+                    (userIcon.getAttribute("data-original-title") !== "Original Donor" || settings.disableUserIcons)) {
                     userIcon.parentElement.removeChild(userIcon);
                 }
             }
